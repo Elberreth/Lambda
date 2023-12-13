@@ -1,4 +1,4 @@
-package se.lexicon.model;
+package se.lexicon.sequencer;
 
 public class IdGenerator {
     private static int counter = 0;

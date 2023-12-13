@@ -1,5 +1,7 @@
 package se.lexicon.model;
 
+import se.lexicon.sequencer.IdGenerator;
+
 public abstract class Product {
     private static final IdGenerator generator = new IdGenerator();
     private int id;
@@ -40,4 +42,14 @@ public abstract class Product {
 
     public abstract String examine();
     public abstract String use();
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Product{");
+        sb.append("id=").append(id);
+        sb.append(", price=").append(price);
+        sb.append(", productName='").append(productName).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
 }
