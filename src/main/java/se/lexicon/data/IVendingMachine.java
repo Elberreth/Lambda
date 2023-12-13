@@ -1,9 +1,10 @@
 package se.lexicon.data;
 
+import se.lexicon.Enum.AddMoney;
 import se.lexicon.model.Product;
 
 public interface IVendingMachine {
-    void addCurrency(int amount);
+    void addCurrency(AddMoney amount);
     int getBalance();
     Product request(int id);
     int endSession();

@@ -6,9 +6,6 @@ import se.lexicon.model.Product;
 public class VendingMachineImpl implements IVendingMachine {
     private Product[] products;
     private int depositPool;
-    private int[] validDepositAmounts = {
-        1,2,5,10,20,50,100,200,500,1000
-    };
 
     public VendingMachineImpl(Product[] products) {
         setProducts(products);
@@ -28,19 +25,14 @@ public class VendingMachineImpl implements IVendingMachine {
     }
 
     @Override
-    public void addCurrency(int amount) {
-        for( int validatedAmount : validDepositAmounts ) {
-            if (validatedAmount == amount) {
-                setDepositPool(depositPool + amount);
-                return;
-            }
-        }
-        throw new IllegalArgumentException("Invalid amount");
+    public void addCurrency(AddMoney amount) {
+        if (amount == null) throw new IllegalArgumentException("Amount can't be set to null");
+        setDepositPool(depositPool + amount.getAmount());
     }
 
     @Override
     public int getBalance() {
-        return 0;
+        return getDepositPool();
     }
 
     @Override
@@ -56,13 +48,20 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public String getDescription(int id) {
-        return null;
+        for ( Product prod : this.products ) {
+            if (prod.getId() == id) {
+                StringBuilder sb = new StringBuilder("Product Description:\n");
+                sb.append(prod.getDescription());
+                return sb.toString();
+            }
+        }
+        return "Product not found";
     }
 
     @Override
     public String[] getProducts() {
         String[] products = new String[this.products.length];
-        for (int i = 0; i < this.products.length ; i++) {
+        for (int i = 0; i < this.products.length; i++) {
             products[i] = this.products[i].getId() + "\n" + this.products[i].getProductName() + "\n" + this.products[i].getPrice();
         }
         return products;

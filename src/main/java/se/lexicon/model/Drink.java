@@ -5,8 +5,8 @@ import se.lexicon.Enum.DrinkSize;
 public class Drink extends Product {
     private String size;
 
-    public Drink(double price, String productName, DrinkSize size) {
-        super(price, productName);
+    public Drink(double price, String productName, String description, DrinkSize size) {
+        super(price, productName, description);
         setSize(size);
     }
 

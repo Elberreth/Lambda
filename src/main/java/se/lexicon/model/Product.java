@@ -7,11 +7,13 @@ public abstract class Product {
     private int id;
     private double price;
     private String productName;
+    private String description;
 
-    public Product(double price, String productName) {
+    public Product(double price, String productName, String description) {
         setId(generator.generateId());
         setPrice(price);
         setProductName(productName);
+        setDescription(description);
     }
 
     public int getId() {
@@ -38,6 +40,18 @@ public abstract class Product {
     private void setProductName(String productName) {
         if ((productName == null) || (productName.isEmpty()) ) throw new IllegalArgumentException("Product name can't be empty or set to null");
         this.productName = productName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    private void setDescription(String description) {
+        if ( (description == null) || (description.isEmpty()) ) {
+            this.description = "*No description available for this product*";
+            return;
+        }
+        this.description = description;
     }
 
     public abstract String examine();

@@ -5,8 +5,8 @@ import se.lexicon.Enum.CandyBarFlavour;
 public class CandyBar extends Product {
     private String flavor;
 
-    public CandyBar(double price, String productName, CandyBarFlavour flavor) {
-        super(price, productName);
+    public CandyBar(double price, String productName, String description, CandyBarFlavour flavor) {
+        super(price, productName, description);
         setFlavor(flavor);
     }
 

@@ -5,8 +5,8 @@ import se.lexicon.Enum.ChipsFlavour;
 public class Chips extends Product {
     private String flavour;
 
-    public Chips(double price, String productName, ChipsFlavour flavour) {
-        super(price, productName);
+    public Chips(double price, String productName, String description, ChipsFlavour flavour) {
+        super(price, productName, description);
         setFlavour(flavour);
     }
 
