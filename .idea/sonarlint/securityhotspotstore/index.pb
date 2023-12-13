@@ -94,3 +94,15 @@ w
 G.idea/sonarlint/issuestore/1/0/10f2119b18de4c2d93011c2acd27301df22c2983,4\6\46b1e47422dc9bb27d66232520441f7cb61c8c1d
 w
 G.idea/sonarlint/issuestore/f/6/f6d8310b47b1802ff534ff6900f24d2d3b76c4f1,e\f\ef9105f2834253bdeb8266cbd4c01070bf563187
+Y
+)src/main/java/se/lexicon/model/Drink.java,6\7\67336b6aea69d5fa6621cffa93872a27ff87f609
+\
+,src/main/java/se/lexicon/Enum/DrinkSize.java,1\e\1ebcb4e656030ec7ea56c8af6c262472f46e8ea0
+]
+-src/main/java/se/lexicon/model/CandyBars.java,3\2\32e87eaac058618eebbc6364fbec55351bda563d
+_
+/src/main/java/se/lexicon/Enum/ChipsFlavour.java,0\3\03e319871c5de29df0499c8e526b0e83ad1ede89
+b
+2src/main/java/se/lexicon/Enum/CandyBarFlavour.java,7\6\76d3e950345428ffd5851a5ef56eff0a20b36dba
+\
+,src/main/java/se/lexicon/model/CandyBar.java,d\5\d5d0c06dfabf81bd6e18421b88a172f72b6f33ce

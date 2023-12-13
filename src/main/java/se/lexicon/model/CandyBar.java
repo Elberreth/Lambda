@@ -1,22 +1,22 @@
 package se.lexicon.model;
 
-import se.lexicon.Enum.ChipsFlavour;
+import se.lexicon.Enum.CandyBarFlavour;
 
-public class Chips extends Product {
-    private String flavour;
+public class CandyBar extends Product {
+    private String flavor;
 
-    public Chips(double price, String productName, ChipsFlavour flavour) {
+    public CandyBar(double price, String productName, CandyBarFlavour flavor) {
         super(price, productName);
-        setFlavour(flavour);
+        setFlavor(flavor);
     }
 
-    public String getFlavour() {
-        return flavour;
+    public String getFlavor() {
+        return flavor;
     }
 
-    private void setFlavour(ChipsFlavour flavour) {
+    private void setFlavor(CandyBarFlavour flavour) {
         if (flavour == null) throw new IllegalArgumentException("Flavour can't be set to null");
-        this.flavour = flavour.getFlavour();
+        this.flavor = flavour.getFlavour();
     }
 
     @Override
@@ -33,8 +33,8 @@ public class Chips extends Product {
     public String toString() {
         String superString = super.toString();
         final StringBuilder sb = new StringBuilder(superString + "\n");
-        sb.append("Chips{");
-        sb.append("flavor='").append(flavour).append('\'');
+        sb.append("CandyBar{");
+        sb.append("flavor='").append(flavor).append('\'');
         sb.append('}');
         return sb.toString();
     }
