@@ -106,3 +106,7 @@ b
 2src/main/java/se/lexicon/Enum/CandyBarFlavour.java,7\6\76d3e950345428ffd5851a5ef56eff0a20b36dba
 \
 ,src/main/java/se/lexicon/model/CandyBar.java,d\5\d5d0c06dfabf81bd6e18421b88a172f72b6f33ce
+b
+2src/main/java/se/lexicon/data/IVendingMachine.java,9\c\9cc5d8906d6d0736d0d04cd17f0102cecb330e2b
+e
+5src/main/java/se/lexicon/data/VendingMachineImpl.java,b\f\bfb5b6c36c891d1dedbe270cd73ee1e66e151743
