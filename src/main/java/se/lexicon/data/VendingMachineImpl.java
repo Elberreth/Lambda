@@ -37,13 +37,38 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public Product request(int id) {
+        Product product = null;
+        for ( Product prod : this.products ) {
+            if (prod.getId() == id) {
+                product = prod;
+            }
+        }
+        if (product == null) {
+            throw new IllegalStateException("Product does not exist");
+        }
+        if (product.getPrice() > getBalance()) {
+            System.out.println("Not sufficient funds");
+            return null;
+        }
+        this.depositPool = (int)(getBalance() - product.getPrice());
+        System.out.println("You have purchased: " + product.getProductName() + " : " + product.getPrice() + ":-");
 
-        return null;
+        return product;
     }
 
     @Override
     public int endSession() {
-        return 0;
+        if (getBalance() == 0) {
+            System.out.println("Session ended");
+            System.out.println("No deposited money to return");
+            return 0;
+        } else {
+            int balance = getBalance();
+            setDepositPool(0);
+            System.out.println("Session ended");
+            System.out.println("Returning " + balance + ":- to customer.");
+            return balance;
+        }
     }
 
     @Override

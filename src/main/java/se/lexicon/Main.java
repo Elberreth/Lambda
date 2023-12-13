@@ -20,7 +20,7 @@ public class Main {
 //        System.out.println(chips2);
 //        System.out.println(chips3);
 
-        Drink drink1 = new Drink(15, "Sprite", null,DrinkSize.CAN);
+        Drink drink1 = new Drink(20, "Sprite", null,DrinkSize.CAN);
         Drink drink2 = new Drink(15, "Fanta", null,DrinkSize.MEDIUM_BOTTLE);
         Drink drink3 = new Drink(15, "Julmust", null,DrinkSize.SMALL_BOTTLE);
 
@@ -60,5 +60,13 @@ public class Main {
         System.out.println(ourVendingMachine.getBalance());
         System.out.println("Description of product with id --> 3 :");
         System.out.println(ourVendingMachine.getDescription(0));
+
+        Product product1 = ourVendingMachine.request(2);
+        System.out.println(product1);
+        System.out.println(ourVendingMachine.getBalance());
+        Product product2 = ourVendingMachine.request(4);
+        System.out.println(product2);
+
+        ourVendingMachine.endSession();
     }
 }
