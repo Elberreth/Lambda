@@ -110,3 +110,5 @@ b
 2src/main/java/se/lexicon/data/IVendingMachine.java,9\c\9cc5d8906d6d0736d0d04cd17f0102cecb330e2b
 e
 5src/main/java/se/lexicon/data/VendingMachineImpl.java,b\f\bfb5b6c36c891d1dedbe270cd73ee1e66e151743
+[
++src/main/java/se/lexicon/Enum/AddMoney.java,3\1\31f867a56eb6340560a852c524dcd5985c3b5846

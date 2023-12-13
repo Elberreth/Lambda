@@ -1,14 +1,18 @@
 package se.lexicon.data;
 
+import se.lexicon.Enum.AddMoney;
 import se.lexicon.model.Product;
 
 public class VendingMachineImpl implements IVendingMachine {
     private Product[] products;
     private int depositPool;
+    private int[] validDepositAmounts = {
+        1,2,5,10,20,50,100,200,500,1000
+    };
 
-    public VendingMachineImpl(Product[] products, int depositPool) {
+    public VendingMachineImpl(Product[] products) {
         setProducts(products);
-        setDepositPool(depositPool);
+        setDepositPool(0);
     }
 
     private void setProducts(Product[] products) {
@@ -24,8 +28,14 @@ public class VendingMachineImpl implements IVendingMachine {
     }
 
     @Override
-    public void addCurrency(double amount) {
-
+    public void addCurrency(int amount) {
+        for( int validatedAmount : validDepositAmounts ) {
+            if (validatedAmount == amount) {
+                setDepositPool(depositPool + amount);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Invalid amount");
     }
 
     @Override
@@ -35,6 +45,7 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public Product request(int id) {
+
         return null;
     }
 
@@ -50,6 +61,10 @@ public class VendingMachineImpl implements IVendingMachine {
 
     @Override
     public String[] getProducts() {
-        return new String[0];
+        String[] products = new String[this.products.length];
+        for (int i = 0; i < this.products.length ; i++) {
+            products[i] = this.products[i].getId() + "\n" + this.products[i].getProductName() + "\n" + this.products[i].getPrice();
+        }
+        return products;
     }
 }
